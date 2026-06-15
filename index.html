@@ -17,8 +17,9 @@
         }
         .hero img {
             width: 100%;
-            height: auto;
+            max-width: 900px;
             display: block;
+            margin: 0 auto;
         }
         
         /* Floating CTA bar */
@@ -57,14 +58,20 @@
             background: linear-gradient(180deg, #fafaf5 0%, #f0f7f0 100%);
             text-align: center;
         }
-        .poster-showcase {
-            max-width: 800px;
+        .poster-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
             margin: 0 auto;
+        }
+        .poster-card {
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            background: white;
         }
-        .poster-showcase img {
+        .poster-card img {
             width: 100%;
             display: block;
         }
@@ -128,14 +135,15 @@
             .section-title { font-size: 1.6em; }
             .cta-bar { flex-direction: column; align-items: center; }
             .cta-btn { width: 85%; justify-content: center; }
+            .poster-gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero: Poster Image -->
+    <!-- Hero: Poster Image 1 -->
     <section class="hero">
-        <img src="images/lucky-feet-ad.png" alt="豪门贵足养生馆 Lucky Feet Health Center - 专业推拿按摩 舒缓疲劳 调理身心">
+        <img src="ad.png" alt="豪门贵足养生馆 Lucky Feet Health Center - 专业推拿按摩 舒缓疲劳 调理身心">
     </section>
 
     <!-- CTA Bar -->
@@ -144,24 +152,32 @@
         <a href="https://wa.me/7788810168" class="cta-btn wechat">💬 微信联系 / WeChat</a>
     </div>
 
-    <!-- Poster Showcase 2 -->
+    <!-- Poster Gallery -->
     <section class="poster-section">
         <h2 class="section-title">专业养生 健康之选</h2>
         <p class="section-subtitle">Professional Wellness, Your Health Choice</p>
-        <div class="poster-showcase">
-            <img src="ad-v2.png" alt="豪门贵足养生馆服务详情">
+        <div class="poster-gallery">
+            <div class="poster-card">
+                <img src="ad2.png" alt="豪门贵足养生馆服务详情">
+            </div>
+            <div class="poster-card">
+                <img src="ad3.png" alt="豪门贵足养生馆推拿按摩">
+            </div>
+            <div class="poster-card">
+                <img src="ad4.png" alt="豪门贵足养生馆专业手法">
+            </div>
         </div>
     </section>
 
     <!-- Services -->
     <section class="services">
         <h2 class="section-title">我们的服务 / Our Services</h2>
-        <p class="section-subtitle">专业推拿按摩 · 舒缓疲劳 · 调理身心</p>
+        <p class="section-subtitle">专业推拿按摩 · 疏通经络 · 缓解疲劳 · 放松身心</p>
         <div class="service-grid">
             <div class="service-card">
                 <div class="emoji">💆</div>
                 <h3>推拿按摩<br><span style="font-size:0.85em;color:#888;">Therapeutic Massage</span></h3>
-                <p class="zh">深层肌肉按摩，缓解疼痛和紧张</p>
+                <p class="zh">深层肌肉按摩，疏通经络，缓解疼痛和紧张</p>
                 <p class="en">Deep tissue massage for pain relief and relaxation</p>
             </div>
             <div class="service-card">
@@ -238,7 +254,7 @@
 
     <!-- Health Tips -->
     <div class="health-tips">
-        <p>💡 <strong>养生小贴士：</strong>每周一次推拿可有效预防颈椎病 | 夏季出汗多，按摩前记得补充水分，空调温度不宜过低</p>
+        <p>🍵 <strong>养生小贴士：</strong>每周一次推拿可有效预防颈椎病 | 夏季出汗多，按摩前记得补充水分，空调温度不宜过低</p>
     </div>
 
     <!-- Contact -->
