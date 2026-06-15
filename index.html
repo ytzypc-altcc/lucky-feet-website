@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豪门贵足养生馆 | Lucky Feet Health Center - Richmond BC</title>
+    <meta name="description" content="豪门贵足养生馆 Lucky Feet Health Center - 专业推拿按摩、足底按摩、肩颈舒缓。列治文161-5951 Minoru Blvd, Richmond, BC。无需预约，随到随按！电话：778-881-0168">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Microsoft YaHei', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; background: #fafaf5; }
+        
+        /* Hero with poster image */
+        .hero {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            max-width: 900px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* Floating CTA bar */
+        .cta-bar {
+            background: linear-gradient(135deg, #1a5e2a 0%, #27ae60 100%);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.15em;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
+        .cta-btn.phone { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        .cta-btn.wechat { background: linear-gradient(135deg, #25d366, #128c7e); }
+        
+        /* Sections */
+        section { padding: 60px 20px; }
+        .section-title { text-align: center; font-size: 2em; margin-bottom: 10px; color: #1a5e2a; }
+        .section-subtitle { text-align: center; font-size: 1.1em; margin-bottom: 40px; color: #777; }
+        
+        /* Poster showcase */
+        .poster-section {
+            background: linear-gradient(180deg, #fafaf5 0%, #f0f7f0 100%);
+            text-align: center;
+        }
+        .poster-showcase {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        .poster-showcase img {
+            width: 100%;
+            display: block;
+        }
+        
+        /* Services grid */
+        .services { background: white; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; }
+        .service-card {
+            background: linear-gradient(135deg, #f8fdf8, #eef7ee);
+            padding: 30px 25px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #d4edda;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(27,94,42,0.15); }
+        .service-card .emoji { font-size: 3em; margin-bottom: 12px; }
+        .service-card h3 { font-size: 1.4em; margin-bottom: 8px; color: #1a5e2a; }
+        .service-card .zh { font-size: 1em; color: #555; margin-bottom: 4px; }
+        .service-card .en { font-size: 0.88em; color: #888; font-style: italic; }
+        
+        /* Highlights */
+        .highlights { background: linear-gradient(135deg, #1a5e2a, #27ae60); color: white; }
+        .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .highlight-item { padding: 20px; }
+        .highlight-item .icon { font-size: 2.8em; margin-bottom: 10px; }
+        .highlight-item h3 { font-size: 1.2em; margin-bottom: 6px; }
+        .highlight-item p { font-size: 0.95em; opacity: 0.9; }
+        
+        /* Reviews */
+        .reviews { background: #f8fdf8; }
+        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; }
+        .review-card { background: white; padding: 28px; border-radius: 14px; border-left: 4px solid #27ae60; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .review-card h3 { color: #1a5e2a; margin-bottom: 10px; }
+        .review-card p { color: #555; margin-bottom: 4px; }
+        .review-card .en { font-style: italic; color: #777; font-size: 0.95em; }
+        
+        /* Health tips banner */
+        .health-tips {
+            background: linear-gradient(90deg, #fdf6e3, #fff8e7, #fdf6e3);
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 2px solid #f0d878;
+            border-bottom: 2px solid #f0d878;
+        }
+        .health-tips p { max-width: 800px; margin: 0 auto; font-size: 1.05em; color: #6b5900; }
+        
+        /* Contact */
+        .contact { background: #0d2818; color: white; }
+        .contact h2 { color: white; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .contact-item { text-align: center; }
+        .contact-item h3 { margin-bottom: 10px; color: #7dcea0; }
+        .contact-item .big { font-size: 1.3em; font-weight: bold; color: #f9e79f; }
+        
+        /* Footer */
+        .footer { background: #061a0e; color: white; text-align: center; padding: 25px 20px; }
+        .footer .tagline { opacity: 0.7; margin-top: 8px; font-size: 0.95em; }
+        
+        @media (max-width: 768px) {
+            .section-title { font-size: 1.6em; }
+            .cta-bar { flex-direction: column; align-items: center; }
+            .cta-btn { width: 85%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero: Poster Image -->
+    <section class="hero">
+        <img src="ad.png" alt="豪门贵足养生馆 Lucky Feet Health Center - 专业推拿按摩 舒缓疲劳 调理身心">
+    </section>
+
+    <!-- CTA Bar -->
+    <div class="cta-bar">
+        <a href="tel:778-881-0168" class="cta-btn phone">📞 立即致电 / Call Now</a>
+        <a href="https://wa.me/7788810168" class="cta-btn wechat">💬 微信联系 / WeChat</a>
+    </div>
+
+    <!-- Poster Showcase 2 -->
+    <section class="poster-section">
+        <h2 class="section-title">专业养生 健康之选</h2>
+        <p class="section-subtitle">Professional Wellness, Your Health Choice</p>
+        <div class="poster-showcase">
+            <img src="ad-v2.png" alt="豪门贵足养生馆服务详情">
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <h2 class="section-title">我们的服务 / Our Services</h2>
+        <p class="section-subtitle">专业推拿按摩 · 舒缓疲劳 · 调理身心</p>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="emoji">💆</div>
+                <h3>推拿按摩<br><span style="font-size:0.85em;color:#888;">Therapeutic Massage</span></h3>
+                <p class="zh">深层肌肉按摩，缓解疼痛和紧张</p>
+                <p class="en">Deep tissue massage for pain relief and relaxation</p>
+            </div>
+            <div class="service-card">
+                <div class="emoji">🦶</div>
+                <h3>足底按摩<br><span style="font-size:0.85em;color:#888;">Foot Reflexology</span></h3>
+                <p class="zh">促进血液循环，放松全身</p>
+                <p class="en">Promotes circulation and full-body relaxation</p>
+            </div>
+            <div class="service-card">
+                <div class="emoji">💪</div>
+                <h3>肩颈舒缓<br><span style="font-size:0.85em;color:#888;">Shoulder & Neck Relief</span></h3>
+                <p class="zh">针对久坐引起的肩颈不适</p>
+                <p class="en">Relief for neck and shoulder strain from prolonged sitting</p>
+            </div>
+            <div class="service-card">
+                <div class="emoji">🌿</div>
+                <h3>养生调理<br><span style="font-size:0.85em;color:#888;">Wellness Therapy</span></h3>
+                <p class="zh">整体调理，增强免疫力</p>
+                <p class="en">Holistic wellness treatment to boost immunity</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights">
+        <h2 class="section-title" style="color:white;">为什么选择我们<br><span style="font-size:0.7em;opacity:0.8;">Why Choose Us</span></h2>
+        <br>
+        <div class="highlight-grid">
+            <div class="highlight-item">
+                <div class="icon">✅</div>
+                <h3>手法专业精湛</h3>
+                <p>针对颈椎病、腰肌劳损<br>精准舒缓</p>
+            </div>
+            <div class="highlight-item">
+                <div class="icon">💰</div>
+                <h3>价格公道实在</h3>
+                <p>合理价格<br>换您一身轻松</p>
+            </div>
+            <div class="highlight-item">
+                <div class="icon">🌱</div>
+                <h3>环境干净舒适</h3>
+                <p>一客一换<br>洁净安心</p>
+            </div>
+            <div class="highlight-item">
+                <div class="icon">🚪</div>
+                <h3>到店免预约</h3>
+                <p>随到随按<br>无需等待</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews">
+        <h2 class="section-title">客户评价<br><span style="font-size:0.7em;color:#999;">Customer Reviews</span></h2>
+        <br>
+        <div class="review-grid">
+            <div class="review-card">
+                <h3>⭐⭐⭐⭐⭐ 专业精湛</h3>
+                <p>按摩师技术精湛，手法专业，每次按完都神清气爽！</p>
+                <p class="en">"The therapists are highly skilled. Best massage in Richmond!"</p>
+            </div>
+            <div class="review-card">
+                <h3>⭐⭐⭐⭐⭐ 环境舒适</h3>
+                <p>环境干净舒适，服务周到，非常适合放松身心。</p>
+                <p class="en">"Clean, relaxing environment. Will definitely come back."</p>
+            </div>
+            <div class="review-card">
+                <h3>⭐⭐⭐⭐⭐ 养生理念</h3>
+                <p>真正懂中医养生，按完之后整个人都轻松了。</p>
+                <p class="en">"They really understand holistic wellness and TCM principles."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Tips -->
+    <div class="health-tips">
+        <p>💡 <strong>养生小贴士：</strong>每周一次推拿可有效预防颈椎病 | 夏季出汗多，按摩前记得补充水分，空调温度不宜过低</p>
+    </div>
+
+    <!-- Contact -->
+    <section class="contact">
+        <h2 class="section-title">联系我们 / Contact Us</h2>
+        <br>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h3>📞 电话咨询</h3>
+                <p class="big">778-881-0168</p>
+                <p>604-370-2248</p>
+            </div>
+            <div class="contact-item">
+                <h3>💬 微信联系</h3>
+                <p class="big">ytzypc</p>
+                <p style="opacity:0.7;margin-top:5px;">扫码添加或直接搜索</p>
+            </div>
+            <div class="contact-item">
+                <h3>📍 门店地址</h3>
+                <p>161-5951 Minoru Blvd</p>
+                <p>Richmond, BC V6X 4B1</p>
+                <p style="opacity:0.7;margin-top:5px;font-size:0.9em;">近苗圃公园及社区中心</p>
+            </div>
+        </div>
+        <br>
+        <div style="text-align:center;margin-top:30px;">
+            <a href="tel:778-881-0168" class="cta-btn phone" style="margin:10px;">📞 立即致电</a>
+            <a href="https://wa.me/7788810168" class="cta-btn wechat" style="margin:10px;">💬 微信联系</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 豪门贵足养生馆 Lucky Feet Health Center Ltd. All rights reserved.</p>
+        <p class="tagline">您的身体，值得我们用心呵护。</p>
+    </footer>
+
+</body>
+</html>
