@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刮痧的科学原理与常见误区 | 豪门贵足养生馆</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Microsoft YaHei', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.8; color: #333; background: #fafaf5; }
+        .top-bar { background: linear-gradient(135deg, #1a5e2a, #27ae60); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .top-bar .brand { color: white; font-size: 1.2em; font-weight: bold; }
+        .top-bar .back-link { color: #d4edda; text-decoration: none; font-size: 0.95em; border: 1px solid #d4edda; padding: 6px 16px; border-radius: 20px; transition: all 0.3s; }
+        .top-bar .back-link:hover { background: white; color: #1a5e2a; }
+        .article-header { background: linear-gradient(135deg, #e8f5e9, #f1f8e9); padding: 50px 20px 40px; text-align: center; border-bottom: 3px solid #27ae60; }
+        .article-header h1 { font-size: 2em; color: #1a5e2a; margin-bottom: 10px; }
+        .article-header .subtitle { color: #666; font-size: 1em; }
+        .article-body { max-width: 860px; margin: 0 auto; padding: 40px 20px 60px; }
+        .section { margin-bottom: 35px; }
+        .section h2 { font-size: 1.5em; color: #1a5e2a; padding-bottom: 8px; margin-bottom: 18px; border-bottom: 2px solid #d4edda; display: flex; align-items: center; gap: 10px; }
+        .section h2 .num { background: #1a5e2a; color: white; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85em; flex-shrink: 0; }
+        .subsection { margin-bottom: 20px; padding-left: 15px; }
+        .subsection h3 { font-size: 1.15em; color: #27ae60; margin-bottom: 10px; }
+        .subsection ul { list-style: none; padding-left: 0; }
+        .subsection ul li { position: relative; padding: 5px 0 5px 22px; color: #444; }
+        .subsection ul li::before { content: "▸"; position: absolute; left: 0; color: #27ae60; font-weight: bold; }
+        .highlight-box { background: linear-gradient(135deg, #fff8e1, #fffde7); border-left: 4px solid #f9a825; padding: 18px 22px; border-radius: 0 12px 12px 0; margin: 20px 0; }
+        .highlight-box h4 { color: #e65100; margin-bottom: 8px; }
+        .warning-box { background: linear-gradient(135deg, #fce4ec, #ffebee); border-left: 4px solid #e53935; padding: 18px 22px; border-radius: 0 12px 12px 0; margin: 20px 0; }
+        .warning-box h4 { color: #c62828; margin-bottom: 8px; }
+        .myth-box { background: linear-gradient(135deg, #e3f2fd, #e8eaf6); border-left: 4px solid #3949ab; padding: 18px 22px; border-radius: 0 12px 12px 0; margin: 15px 0; }
+        .myth-box .myth { color: #c62828; font-weight: bold; }
+        .myth-box .fact { color: #1a5e2a; font-weight: bold; }
+        .cta-section { background: linear-gradient(135deg, #1a5e2a, #27ae60); color: white; padding: 40px 20px; text-align: center; margin-top: 40px; }
+        .cta-section h2 { color: white; border: none; font-size: 1.6em; margin-bottom: 15px; justify-content: center; }
+        .cta-section p { opacity: 0.9; margin-bottom: 20px; font-size: 1.05em; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 36px; border-radius: 50px; text-decoration: none; font-size: 1.1em; font-weight: bold; color: white; transition: transform 0.3s, box-shadow 0.3s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
+        .cta-btn.phone { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        .cta-btn.wechat { background: linear-gradient(135deg, #25d366, #128c7e); }
+        .footer { background: #061a0e; color: white; text-align: center; padding: 25px 20px; }
+        .footer .tagline { opacity: 0.7; margin-top: 8px; font-size: 0.95em; }
+        .diagram-box { background: white; border: 2px dashed #d4edda; border-radius: 12px; padding: 25px; margin: 20px 0; text-align: center; }
+        .diagram-box .flow { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin: 15px 0; }
+        .diagram-box .flow-step { background: #e8f5e9; padding: 12px 18px; border-radius: 10px; font-weight: bold; color: #1a5e2a; font-size: 0.95em; }
+        .diagram-box .arrow { color: #27ae60; font-size: 1.5em; }
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.5em; }
+            .section h2 { font-size: 1.3em; }
+            .diagram-box .flow { flex-direction: column; }
+            .diagram-box .arrow { transform: rotate(90deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <div class="top-bar">
+        <span class="brand">豪门贵足养生馆 Lucky Feet</span>
+        <a href="index.html" class="back-link">← 返回首页</a>
+    </div>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <h1>刮痧的科学原理与常见误区解析</h1>
+        <p class="subtitle">从现代医学角度认识传统中医理疗技术</p>
+    </header>
+
+    <!-- Article Body -->
+    <div class="article-body">
+
+        <!-- 一、毛细血管结构与特性 -->
+        <div class="section">
+            <h2><span class="num">一</span> 毛细血管结构与特性</h2>
+            <div class="subsection">
+                <h3>1. 基本形态</h3>
+                <ul>
+                    <li>皮下毛细血管是细密的网状结构，不同于粗大的动静脉</li>
+                    <li>主要负责营养交换和代谢废物运输</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>2. 三大特征</h3>
+                <ul>
+                    <li><strong>血管壁仅由单层内皮细胞构成</strong> — 极其薄脆</li>
+                    <li><strong>细胞间存在天然微小缝隙</strong> — 允许营养物质渗透</li>
+                    <li><strong>无肌肉保护层</strong> — 柔软脆弱，但并非密封结构</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 二、刮痧作用机制 -->
+        <div class="section">
+            <h2><span class="num">二</span> 刮痧作用机制</h2>
+            <div class="subsection">
+                <h3>三阶段生理过程</h3>
+                <div class="diagram-box">
+                    <div class="flow">
+                        <div class="flow-step">① 扩张阶段</div>
+                        <span class="arrow">→</span>
+                        <div class="flow-step">② 牵拉阶段</div>
+                        <span class="arrow">→</span>
+                        <div class="flow-step">③ 渗出阶段</div>
+                    </div>
+                    <p style="color:#666;font-size:0.9em;margin-top:10px;">外力刺激 → 血管扩张充血 → 管壁张力增大 → 间隙扩大 → 代谢物渗出</p>
+                </div>
+                <ul>
+                    <li><strong>扩张阶段：</strong>外力刺激使血管扩张充血</li>
+                    <li><strong>牵拉阶段：</strong>管壁张力增大，内皮间隙（网眼）被撑大</li>
+                    <li><strong>渗出阶段：</strong>淤堵的代谢物及衰老血细胞通过扩大的间隙渗出</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>"痧"的本质</h3>
+                <div class="highlight-box">
+                    <h4>💡 核心认知</h4>
+                    <ul style="margin-top:8px;">
+                        <li>渗出的红细胞和代谢物在皮下形成的<strong>可视印记</strong></li>
+                        <li>颜色深浅与局部淤堵程度<strong>正相关</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 三、关键误区澄清 -->
+        <div class="section">
+            <h2><span class="num">三</span> 关键误区澄清</h2>
+            <div class="subsection">
+                <h3>刮痧 vs 血管破裂</h3>
+                <div class="myth-box">
+                    <p class="myth">❌ 误区：刮痧就是刮破血管</p>
+                    <p style="margin:8px 0;"></p>
+                    <p class="fact">✅ 事实：刮痧仅造成可逆性内皮间隙扩大，血管整体结构保持完整（无撕裂/断裂），不同于外伤导致的血管直接破损。</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>中医理论与现代医学印证</h3>
+                <ul>
+                    <li><strong>"久病多瘀"</strong> — 对应毛细血管淤堵现象，淤堵区域因代谢物堆积更易出痧</li>
+                    <li>刮痧后的微循环改善可促进一氧化氮（NO）释放，带来放松和止痛效果</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 四、常见误区补充 -->
+        <div class="section">
+            <h2><span class="num">四</span> 常见误区补充</h2>
+            <div class="subsection">
+                <div class="myth-box">
+                    <p class="myth">❌ "不出痧等于没效果"</p>
+                    <p class="fact">✅ 事实：个体差异（皮肤薄厚、毛细血管脆弱程度、刮拭力度）都会影响出痧程度，不出痧不代表无效。</p>
+                </div>
+                <div class="myth-box">
+                    <p class="myth">❌ "痧越深越好"</p>
+                    <p class="fact">✅ 事实：过度刮拭可造成组织损伤，应以舒适为度。</p>
+                </div>
+                <div class="myth-box">
+                    <p class="myth">❌ "刮痧可以替代就医"</p>
+                    <p class="fact">✅ 事实：刮痧是辅助保健手段，不能替代正规医疗诊断和治疗。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 五、注意事项 -->
+        <div class="section">
+            <h2><span class="num">五</span> 注意事项</h2>
+            <div class="warning-box">
+                <h4>⚠️ 禁忌人群</h4>
+                <ul style="margin-top:8px;">
+                    <li>凝血功能障碍者</li>
+                    <li>皮肤破损或有炎症者</li>
+                    <li>孕妇（腹部和腰部禁止刮痧）</li>
+                </ul>
+            </div>
+            <div class="highlight-box">
+                <h4>📋 操作原则</h4>
+                <ul style="margin-top:8px;">
+                    <li>避免暴力刮拭，需控制力度与频次</li>
+                    <li>痧印本质是微循环调节的生理反应，非治疗指标</li>
+                    <li>刮痧后注意保暖，适当补充温水</li>
+                    <li>两次刮痧间隔建议至少3-5天，待痧印消退后再进行</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2>想体验正宗刮痧理疗？</h2>
+        <p>豪门贵足养生馆专业刮痧，疏通经络，排毒祛湿</p>
+        <a href="tel:+17788810168" class="cta-btn phone">📞 立即预约</a>
+        <a href="https://wa.me/7788810168" class="cta-btn wechat" style="margin-left:10px;">💬 微信咨询</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 豪门贵足养生馆 Lucky Feet Health Center Ltd. All rights reserved.</p>
+        <p class="tagline">161-5951 Minoru Blvd, Richmond, BC | 电话：778-881-0168 | 微信：ytzypc</p>
+    </footer>
+</body>
+</html>
