@@ -1,0 +1,21 @@
+[
+    {"id": 1, "date": "2026-06-12", "description": "Preauthorized credit FIRST DATA", "type": "income", "category": "income", "amount": 478.80, "note": "Sales"},
+    {"id": 2, "date": "2026-06-12", "description": "Preauthorized credit FIRST DATA - Tips", "type": "income", "category": "income", "amount": 73.55, "note": "Tips"},
+    {"id": 3, "date": "2026-06-11", "description": "Preauthorized credit FIRST DATA", "type": "income", "category": "income", "amount": 189.00, "note": "Sales"},
+    {"id": 4, "date": "2026-06-11", "description": "Preauthorized credit FIRST DATA - Tips", "type": "income", "category": "income", "amount": 30.00, "note": "Tips"},
+    {"id": 5, "date": "2026-06-09", "description": "Preauthorized credit FIRST DATA", "type": "income", "category": "income", "amount": 189.00, "note": "Sales"},
+    {"id": 6, "date": "2026-06-09", "description": "Preauthorized credit IOT PAY TECH", "type": "income", "category": "income", "amount": 125.76, "note": "Sales"},
+    {"id": 7, "date": "2026-06-09", "description": "Preauthorized credit IOT PAY TECH - Tips", "type": "income", "category": "income", "amount": 25.48, "note": "Tips"},
+    {"id": 8, "date": "2026-06-08", "description": "Preauthorized credit FIRST DATA", "type": "income", "category": "income", "amount": 659.00, "note": "Sales"},
+    {"id": 9, "date": "2026-06-08", "description": "Preauthorized credit IOT PAY TECH", "type": "income", "category": "income", "amount": 83.28, "note": "Sales"},
+    {"id": 10, "date": "2026-06-08", "description": "Preauthorized payment VANCITY VISA", "type": "expense", "category": "salary", "amount": 1268.91, "note": "Payroll - Salary & Wages"},
+    {"id": 11, "date": "2026-06-05", "description": "Preauthorized credit FIRST DATA", "type": "income", "category": "income", "amount": 435.33, "note": "Sales"},
+    {"id": 12, "date": "2026-06-04", "description": "Preauthorized credit FIRST DATA", "type": "income", "category": "income", "amount": 437.60, "note": "Sales"},
+    {"id": 13, "date": "2026-06-03", "description": "Preauthorized credit FIRST DATA", "type": "income", "category": "income", "amount": 219.20, "note": "Sales"},
+    {"id": 14, "date": "2026-06-02", "description": "Preauthorized credit FIRST DATA", "type": "income", "category": "income", "amount": 499.55, "note": "Sales"},
+    {"id": 15, "date": "2026-06-02", "description": "Cheque cleared Cheque 170", "type": "expense", "category": "salary", "amount": 1963.00, "note": "Payroll - Salary & Wages"},
+    {"id": 16, "date": "2026-06-01", "description": "Transfer Debit Arrangement CEBA", "type": "expense", "category": "other", "amount": 259.11, "note": "Bank Service Charges"},
+    {"id": 17, "date": "2026-06-01", "description": "Preauthorized payment FIRST DATA", "type": "expense", "category": "other", "amount": 131.36, "note": "Bank Service Charges"},
+    {"id": 18, "date": "2026-06-01", "description": "Preauthorized credit IOT PAY TECH", "type": "income", "category": "income", "amount": 75.47, "note": "Sales"},
+    {"id": 19, "date": "2026-06-01", "description": "Preauthorized credit FIRST DATA", "type": "income", "category": "income", "amount": 792.00, "note": "Sales"}
+]
