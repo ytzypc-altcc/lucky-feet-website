@@ -30,7 +30,9 @@ body {
 
 .nav-link:hover, .nav-link.active { background: rgba(255,255,255,0.2); }
 
-.tab-content { padding: 30px; }
+/* Tab content containers */
+.container { display: none !important; padding: 30px; }
+.container.active { display: block; }
 .tab-content.active { display: block; }
 
 .container { max-width: 1200px; margin: 0 auto; }
