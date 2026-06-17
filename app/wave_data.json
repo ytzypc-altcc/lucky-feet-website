@@ -9,9 +9,10 @@
   {
     "date": "2026-01-01",
     "description": "Cheque cleared Cheque 145",
-    "category": "salary",
+    "category": "other",
     "type": "expense",
-    "amount": 358.55
+    "amount": 358.55,
+    "note": "Cheque #145 - Other expense"
   },
   {
     "date": "2026-01-02",
@@ -324,9 +325,10 @@
   {
     "date": "2026-02-17",
     "description": "Cheque cleared Cheque 144",
-    "category": "salary",
+    "category": "other",
     "type": "expense",
-    "amount": 2403.35
+    "amount": 2403.35,
+    "note": "Cheque #144 - Unclassified ($2403.35)"
   },
   {
     "date": "2026-02-17",
@@ -464,9 +466,10 @@
   {
     "date": "2026-03-03",
     "description": "Cheque cleared Cheque 148",
-    "category": "salary",
+    "category": "other",
     "type": "expense",
-    "amount": 263.6
+    "amount": 263.6,
+    "note": "Cheque #148 - Unclassified ($263.6)"
   },
   {
     "date": "2026-03-04",
@@ -492,9 +495,10 @@
   {
     "date": "2026-03-05",
     "description": "Cheque cleared Cheque 149",
-    "category": "salary",
+    "category": "other",
     "type": "expense",
-    "amount": 83.24
+    "amount": 83.24,
+    "note": "Cheque #149 - Unclassified ($83.24)"
   },
   {
     "date": "2026-03-05",
@@ -576,9 +580,10 @@
   {
     "date": "2026-03-17",
     "description": "Cheque cleared Cheque 150",
-    "category": "salary",
+    "category": "other",
     "type": "expense",
-    "amount": 1518.0
+    "amount": 1518.0,
+    "note": "Cheque #150 - Unclassified ($1518.0)"
   },
   {
     "date": "2026-03-17",
@@ -688,9 +693,10 @@
   {
     "date": "2026-04-01",
     "description": "Cheque cleared Cheque 151",
-    "category": "salary",
+    "category": "other",
     "type": "expense",
-    "amount": 967.75
+    "amount": 967.75,
+    "note": "Cheque #151 - Unclassified ($967.75)"
   },
   {
     "date": "2026-04-01",
@@ -758,44 +764,50 @@
   {
     "date": "2026-04-11",
     "description": "Cheque cleared Cheque 117",
-    "category": "salary",
+    "category": "rent",
     "type": "expense",
-    "amount": 2600.0
+    "amount": 2600.0,
+    "note": "Cheque #117 - Rent"
   },
   {
     "date": "2026-04-11",
     "description": "Cheque cleared Cheque 118",
-    "category": "salary",
+    "category": "rent",
     "type": "expense",
-    "amount": 2600.0
+    "amount": 2600.0,
+    "note": "Cheque #118 - Rent"
   },
   {
     "date": "2026-04-11",
     "description": "Cheque cleared Cheque 119",
-    "category": "salary",
+    "category": "rent",
     "type": "expense",
-    "amount": 2600.0
+    "amount": 2600.0,
+    "note": "Cheque #119 - Rent"
   },
   {
     "date": "2026-04-11",
     "description": "Cheque cleared Cheque 120",
-    "category": "salary",
+    "category": "rent",
     "type": "expense",
-    "amount": 2600.0
+    "amount": 2600.0,
+    "note": "Cheque #120 - Rent"
   },
   {
     "date": "2026-04-11",
     "description": "Cheque cleared Cheque 121",
-    "category": "salary",
+    "category": "rent",
     "type": "expense",
-    "amount": 2600.0
+    "amount": 2600.0,
+    "note": "Cheque #121 - Rent"
   },
   {
     "date": "2026-04-11",
     "description": "Cheque cleared Cheque 122",
-    "category": "salary",
+    "category": "rent",
     "type": "expense",
-    "amount": 2600.0
+    "amount": 2600.0,
+    "note": "Cheque #122 - Rent"
   },
   {
     "date": "2026-04-13",
@@ -837,7 +849,8 @@
     "description": "Cheque cleared Cheque 167",
     "category": "salary",
     "type": "expense",
-    "amount": 1136.75
+    "amount": 1136.75,
+    "note": "Cheque #167 - Payroll"
   },
   {
     "date": "2026-04-17",
@@ -956,7 +969,8 @@
     "description": "Cheque cleared Cheque 168",
     "category": "salary",
     "type": "expense",
-    "amount": 1524.0
+    "amount": 1524.0,
+    "note": "Cheque #168 - Payroll"
   },
   {
     "date": "2026-05-01",
@@ -1031,23 +1045,26 @@
   {
     "date": "2026-05-08",
     "description": "Cheque cleared Cheque 154",
-    "category": "salary",
+    "category": "rent",
     "type": "expense",
-    "amount": 2600.0
+    "amount": 2600.0,
+    "note": "Cheque #154 - Rent"
   },
   {
     "date": "2026-05-08",
     "description": "Cheque cleared Cheque 152",
-    "category": "salary",
+    "category": "rent",
     "type": "expense",
-    "amount": 2600.0
+    "amount": 2600.0,
+    "note": "Cheque #152 - Rent"
   },
   {
     "date": "2026-05-08",
     "description": "Cheque cleared Cheque 153",
-    "category": "salary",
+    "category": "rent",
     "type": "expense",
-    "amount": 2600.0
+    "amount": 2600.0,
+    "note": "Cheque #153 - Rent"
   },
   {
     "date": "2026-05-08",
@@ -1180,7 +1197,8 @@
     "description": "Cheque cleared Cheque 169",
     "category": "salary",
     "type": "expense",
-    "amount": 2192.97
+    "amount": 2192.97,
+    "note": "Cheque #169 - Payroll"
   },
   {
     "date": "2026-05-20",
@@ -1327,7 +1345,8 @@
     "description": "Cheque cleared Cheque 170",
     "category": "salary",
     "type": "expense",
-    "amount": 1963.0
+    "amount": 1963.0,
+    "note": "Cheque #170 - Payroll"
   },
   {
     "date": "2026-06-02",
@@ -1418,7 +1437,8 @@
     "description": "Cheque cleared Cheque 171",
     "category": "salary",
     "type": "expense",
-    "amount": 2219.2
+    "amount": 2219.2,
+    "note": "Cheque #171 - Payroll"
   },
   {
     "date": "2026-06-16",
