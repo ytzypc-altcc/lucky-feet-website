@@ -1674,6 +1674,41 @@ document.getElementById('month-filter').addEventListener('change', () => {
     });
 });
 
+// ==================== 密码保护 ====================
+const APP_PASSWORD = 'luxuryfeet2026';
+
+function checkLogin() {
+    if (localStorage.getItem('lucky-feet-logged-in') === 'true') {
+        showApp();
+        return;
+    }
+    document.getElementById('login-screen').style.display = 'block';
+    document.getElementById('main-app').style.display = 'none';
+}
+
+document.getElementById('login-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const pwd = document.getElementById('password').value;
+    if (pwd === APP_PASSWORD) {
+        localStorage.setItem('lucky-feet-logged-in', 'true');
+        showApp();
+    } else {
+        document.getElementById('login-error').style.display = 'block';
+    }
+});
+
+document.getElementById('logout-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.removeItem('lucky-feet-logged-in');
+    location.reload();
+});
+
+function showApp() {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('main-app').style.display = 'block';
+    updateDashboard();
+    renderTransactions();
+}
+
 // 初始化
-updateDashboard();
-renderTransactions();
+checkLogin();
