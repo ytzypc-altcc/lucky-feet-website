@@ -1705,7 +1705,9 @@ document.getElementById('logout-btn').addEventListener('click', (e) => {
 
 function showApp() {
     document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('main-app').style.display = 'block';
+    const mainApp = document.getElementById('main-app');
+    mainApp.style.display = 'block';
+    mainApp.classList.add('active');
     updateDashboard();
     renderTransactions();
 }
