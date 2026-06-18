@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Noto+Sans:wght@300;400;600;700&family=Noto+Serif+SC:wght@400;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    width: 1080px;
+    height: 1350px;
+    font-family: 'Noto Sans', 'Noto Sans SC', Arial, sans-serif;
+    background: linear-gradient(180deg, #f5f0e8 0%, #faf6f0 40%, #f0ebe3 100%);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Top decorative band */
+  .top-band {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(135deg, #2d5016 0%, #4a7c23 50%, #3d6b1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .top-band::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #d4a843, transparent);
+  }
+  .top-band-text {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  
+  /* Main content area */
+  .main-content {
+    padding: 30px 50px;
+    position: relative;
+  }
+  
+  /* Hero section */
+  .hero-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+  }
+  
+  /* Left: wellness text */
+  .wellness-text {
+    flex: 1;
+  }
+  .seasonal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: #2d5016;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .seasonal-title .accent {
+    color: #c45c20;
+  }
+  .ribbon-banner {
+    background: linear-gradient(135deg, #4a7c23, #3d6b1a);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+    margin: 12px 0;
+    box-shadow: 0 3px 12px rgba(45,80,22,0.3);
+  }
+  .wellness-body {
+    font-size: 18px;
+    color: #4a4a3a;
+    line-height: 1.7;
+    margin-top: 12px;
+    padding: 16px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 10px;
+    border-left: 4px solid #d4a843;
+  }
+  
+  /* Right: image placeholder */
+  .hero-image {
+    flex: 1;
+    height: 300px;
+    background: linear-gradient(135deg, #e8e0d0, #d4cbb8);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  }
+  .hero-image::before {
+    content: '🧖‍♀️';
+    font-size: 120px;
+    opacity: 0.3;
+  }
+  .hero-image-label {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.85);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #666;
+  }
+  
+  /* Divider */
+  .divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4a843, transparent);
+    margin: 20px 0;
+  }
+  
+  /* Tip banner */
+  .tip-banner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #fdf8ee, #faf3e0);
+    border: 1px solid #e8dcc8;
+    border-radius: 12px;
+    padding: 20px 28px;
+    margin-bottom: 25px;
+  }
+  .tip-icon {
+    font-size: 36px;
+    flex-shrink: 0;
+  }
+  .tip-content {
+    flex: 1;
+  }
+  .tip-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #c45c20;
+    margin-bottom: 4px;
+  }
+  .tip-text {
+    font-size: 16px;
+    color: #4a4a3a;
+    line-height: 1.5;
+  }
+  .tip-text-en {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+    margin-top: 2px;
+  }
+  
+  /* Services section */
+  .services-section {
+    margin-bottom: 25px;
+  }
+  .services-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .services-header-left {
+    font-size: 14px;
+    color: #888;
+    letter-spacing: 2px;
+  }
+  .services-header-right {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #2d5016;
+  }
+  .services-header-sub {
+    font-size: 13px;
+    color: #888;
+    font-weight: 400;
+  }
+  
+  .services-grid {
+    display: flex;
+    gap: 16px;
+  }
+  .service-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    border: 1px solid #eee8dc;
+  }
+  .service-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  .service-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2d5016;
+    margin-bottom: 4px;
+  }
+  .service-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+  }
+  .service-desc-en {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    margin-top: 4px;
+  }
+  
+  /* CTA badge */
+  .cta-badge {
+    position: absolute;
+    right: 50px;
+    bottom: 200px;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #4a7c23, #2d5016);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(45,80,22,0.4);
+  }
+  .cta-badge-main {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .cta-badge-sub {
+    font-size: 12px;
+    margin-top: 6px;
+    background: #c45c20;
+    padding: 4px 12px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+  
+  /* Contact section */
+  .contact-section {
+    background: linear-gradient(135deg, #fdf8ee, #f5edd8);
+    border-radius: 14px;
+    padding: 24px 36px;
+    display: flex;
+    gap: 30px;
+    border: 1px solid #e8dcc8;
+  }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1;
+  }
+  .contact-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .contact-label {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 2px;
+  }
+  .contact-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #3a3a2a;
+    line-height: 1.4;
+  }
+  .contact-value-en {
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+  }
+  
+  /* Tagline */
+  .tagline {
+    text-align: center;
+    margin-top: 18px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #c45c20;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .tagline-en {
+    font-size: 14px;
+    color: #999;
+    font-style: italic;
+    margin-top: 4px;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  
+  /* Hashtags */
+  .hashtags {
+    text-align: center;
+    margin-top: 14px;
+    padding: 10px;
+    background: linear-gradient(90deg, transparent, rgba(196,92,32,0.08), transparent);
+    border-radius: 8px;
+  }
+  .hashtags span {
+    font-size: 13px;
+    color: #c45c20;
+    margin: 0 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Band -->
+<div class="top-band">
+  <div class="top-band-text">✦ TODAY IS ANOTHER DAY FULL OF ENERGY ✦</div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+  
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="wellness-text">
+      <div class="seasonal-title">
+        Summer Wellness<br>
+        <span class="accent">Nourish & Detox</span>
+      </div>
+      <div class="ribbon-banner">
+        ❄️ Too Much AC? Winter Suffering Awaits!
+      </div>
+      <div class="wellness-body">
+        Stiff shoulders & neck from air conditioning? Come for a deep tissue massage and drive out the cold! 🥶🏆
+        <br><br>
+        <em style="font-size:14px;color:#999;">空调吹多了肩颈僵硬？来一次深层推拿，把寒气赶出去！</em>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-label">📷 Professional Spa Photo</div>
+    </div>
+  </div>
+  
+  <div class="divider"></div>
+  
+  <!-- Tip Banner -->
+  <div class="tip-banner">
+    <div class="tip-icon">💡</div>
+    <div class="tip-content">
+      <div class="tip-label">WELLNESS TIP</div>
+      <div class="tip-text">
+        Drive often? Regular massage helps prevent back strain. After massage, soak your feet in hot water for double the benefit!
+      </div>
+      <div class="tip-text-en">经常开车的人容易腰肌劳损，记得定期推拿。按摩后可以泡个热水脚，效果翻倍！</div>
+    </div>
+  </div>
+  
+  <!-- Services Section -->
+  <div class="services-section">
+    <div class="services-header">
+      <div class="services-header-left">WELLNESS CENTER SERVICE AREA</div>
+      <div>
+        <div class="services-header-right">Lucky Feet Health Center</div>
+        <div class="services-header-sub">豪门贵足养生馆 · Professional Services</div>
+      </div>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">💆‍♂️</div>
+        <div class="service-title">Expert Technique</div>
+        <div class="service-desc">Precise relief for neck pain, back strain & more</div>
+        <div class="service-desc-en">手法专业精湛</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💰</div>
+        <div class="service-title">Fair & Honest</div>
+        <div class="service-desc">Reasonable prices, complete relaxation</div>
+        <div class="service-desc-en">价格公道实在</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🍃</div>
+        <div class="service-title">Clean & Comfortable</div>
+        <div class="service-desc">Fresh linens per guest, hygienic & reassuring</div>
+        <div class="service-desc-en">环境干净舒适</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- CTA Badge -->
+  <div class="cta-badge">
+    <div class="cta-badge-main">Walk-In<br>Welcome!</div>
+    <div class="cta-badge-sub">No Appointment Needed</div>
+  </div>
+  
+  <!-- Contact Section -->
+  <div class="contact-section">
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div>
+        <div class="contact-label">PHONE</div>
+        <div class="contact-value">604-370-2248</div>
+        <div class="contact-value">778-881-0168</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">💬</div>
+      <div>
+        <div class="contact-label">WECHAT</div>
+        <div class="contact-value">ytzypc</div>
+      </div>
+    </div>
+    <div class="contact-item" style="flex:2;">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-label">ADDRESS</div>
+        <div class="contact-value">161-5951 Minoru Blvd</div>
+        <div class="contact-value">Richmond, BC V6X 4B1</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Tagline -->
+  <div class="tagline">
+    ● YOUR BODY DESERVES OUR CARE ●
+  </div>
+  <div class="tagline-en">你的身体，值得我们用心呵护</div>
+  
+  <!-- Hashtags -->
+  <div class="hashtags">
+    <span>#RichmondBC</span>
+    <span>#MassageTherapy</span>
+    <span>#LuckyFeet</span>
+    <span>#豪门贵足养生馆</span>
+    <span>#WellnessVancouver</span>
+    <span>#SelfCare</span>
+    <span>#BackPainRelief</span>
+  </div>
+  
+</div>
+
+</body>
+</html>

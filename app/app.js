@@ -1469,7 +1469,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.add('active');
         
         // 切换内容
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.container').forEach(c => c.classList.remove('active'));
         document.getElementById(tab).classList.add('active');
         
         // 刷新数据
@@ -1560,7 +1560,7 @@ function editTransaction(id) {
     // 切换到添加页面
     document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
     document.querySelector('[data-tab="add"]').classList.add('active');
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.container').forEach(c => c.classList.remove('active'));
     document.getElementById('add').classList.add('active');
 }
 
