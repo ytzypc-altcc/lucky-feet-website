@@ -1621,6 +1621,21 @@ document.getElementById('generate-report').addEventListener('click', () => {
     });
     reportData.innerHTML += '</tbody></table>';
     
+    // GST汇总
+    const gstTransactions = filtered.filter(t => t.category === 'gst');
+    const gstIncome = gstTransactions.filter(t => t.type === 'income').reduce((s, t) => s + t.amount, 0);
+    const gstExpense = gstTransactions.filter(t => t.type === 'expense').reduce((s, t) => s + t.amount, 0);
+    const gstNet = gstIncome - gstExpense;
+    
+    if (gstTransactions.length > 0) {
+        reportData.innerHTML += '<h2 style="margin-top:30px;">📋 GST汇总（商品及服务税）</h2>';
+        reportData.innerHTML += '<table class="transaction-table"><thead><tr><th>类型</th><th>金额</th></tr></thead><tbody>';
+        reportData.innerHTML += '<tr><td>GST收入</td><td class="income">$' + gstIncome.toFixed(2) + '</td></tr>';
+        reportData.innerHTML += '<tr><td>GST支出</td><td class="expense">$' + gstExpense.toFixed(2) + '</td></tr>';
+        reportData.innerHTML += '<tr style="font-weight:bold;"><td>GST净额</td><td class="' + (gstNet >= 0 ? 'income' : 'expense') + '">$' + gstNet.toFixed(2) + '</td></tr>';
+        reportData.innerHTML += '</tbody></table>';
+    }
+    
     // 渲染图表
     const ctx = document.getElementById('report-chart').getContext('2d');
     if (window.reportChart) window.reportChart.destroy();
