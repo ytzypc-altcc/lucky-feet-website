@@ -32,6 +32,18 @@
         .service-card .zh { font-size: 1em; color: #555; margin-bottom: 4px; }
         .service-card .en { font-size: 0.88em; color: #888; font-style: italic; }
         .highlights { background: linear-gradient(135deg, #1a5e2a, #27ae60); color: white; }
+        .price-list { background: #f8fdf8; }
+        .price-table { max-width: 720px; margin: 0 auto; }
+        .price-row { display: flex; align-items: center; justify-content: space-between; background: white; padding: 18px 22px; border-radius: 12px; margin-bottom: 12px; border: 1px solid #d4edda; }
+        .price-row .p-name { font-size: 1.08em; font-weight: bold; color: #1a5e2a; }
+        .price-row .p-en { font-weight: normal; font-size: 0.8em; color: #888; font-style: italic; display: block; margin-top: 2px; }
+        .price-row .p-time { font-size: 0.9em; color: #555; }
+        .price-row .p-price { font-size: 1.35em; font-weight: bold; color: #27ae60; }
+        .price-sub { background: white; padding: 16px 22px; border-radius: 12px; margin-bottom: 16px; border: 1px dashed #27ae60; }
+        .price-sub .p-sub-title { display: block; font-weight: bold; color: #1a5e2a; margin-bottom: 10px; font-size: 0.95em; }
+        .price-sub .p-sub-list { display: flex; flex-wrap: wrap; gap: 10px; }
+        .price-sub .p-sub-list span { background: #eef7ee; color: #27ae60; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; }
+        .price-note { text-align: center; font-size: 0.85em; color: #999; margin-top: 10px; }
         .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; text-align: center; }
         .highlight-item { padding: 20px; }
         .highlight-item .icon { font-size: 2.8em; margin-bottom: 10px; }
@@ -147,6 +159,44 @@
                 <p class="en">Full body acupressure for holistic wellness</p>
             </div>
         </div>
+    </section>
+
+    <!-- Price List -->
+    <section class="price-list">
+        <h2 class="section-title">价目表 / Price List</h2>
+        <p class="section-subtitle">透明收费 · 到店免预约，随到随做</p>
+        <div class="price-table">
+            <div class="price-row main">
+                <span class="p-name">全身按摩 <span class="p-en">Full-Body Massage</span></span>
+                <span class="p-time">50 分钟 / 50 min</span>
+                <span class="p-price">CA$60</span>
+            </div>
+            <div class="price-row main">
+                <span class="p-name">芳香精油按摩 <span class="p-en">Essential Oil Massage</span></span>
+                <span class="p-time"></span>
+                <span class="p-price">CA$70</span>
+            </div>
+            <div class="price-row main">
+                <span class="p-name">修脚 <span class="p-en">Pedicure</span></span>
+                <span class="p-time"></span>
+                <span class="p-price">CA$70</span>
+            </div>
+            <div class="price-row main">
+                <span class="p-name">专业调理 <span class="p-en">Professional Treatment</span></span>
+                <span class="p-time">30 分钟 / 30 min</span>
+                <span class="p-price">CA$60</span>
+            </div>
+            <div class="price-sub">
+                <span class="p-sub-title">专业调理项目 / Includes:</span>
+                <div class="p-sub-list">
+                    <span>腰部调理 Lower Back</span>
+                    <span>颈部调理 Neck</span>
+                    <span>四肢调理 Limbs</span>
+                    <span>拔罐调理 Cupping</span>
+                </div>
+            </div>
+        </div>
+        <p class="price-note">* 价格以店内为准 / Prices in CAD, subject to change without notice</p>
     </section>
 
     <!-- Highlights -->
