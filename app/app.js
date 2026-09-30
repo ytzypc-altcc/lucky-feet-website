@@ -1483,29 +1483,122 @@ document.getElementById('date').value = new Date().toISOString().split('T')[0];
 document.getElementById('month-filter').value = new Date().toISOString().slice(0, 7);
 document.getElementById('report-month').value = new Date().toISOString().slice(0, 7);
 
+// ==================== 动态分类下拉菜单 ====================
+const CATEGORY_MAP = {
+    income: [
+        { value: 'income', label: '销售收入' },
+        { value: 'tip', label: '小费' },
+        { value: 'salary', label: '工资' },
+        { value: 'utilities', label: '水电' },
+        { value: 'gst', label: 'GST' },
+        { value: 'other', label: '其他' }
+    ],
+    expense: [
+        { value: 'salary', label: '工资' },
+        { value: 'utilities', label: '水电' },
+        { value: 'rent', label: '租金' },
+        { value: 'supplies', label: '耗材' },
+        { value: 'gst', label: 'GST' },
+        { value: 'other', label: '其他' }
+    ]
+};
+
+function updateCategoryOptions() {
+    const type = document.getElementById('type').value;
+    const catSelect = document.getElementById('category');
+    catSelect.innerHTML = '';
+    CATEGORY_MAP[type].forEach(opt => {
+        const option = document.createElement('option');
+        option.value = opt.value;
+        option.textContent = opt.label;
+        catSelect.appendChild(option);
+    });
+}
+
+document.getElementById('type').addEventListener('change', updateCategoryOptions);
+updateCategoryOptions(); // 初始化
+
+// ==================== 拆分收入（小费）功能 ====================
+const splitCheck = document.getElementById('split-check');
+const splitFields = document.getElementById('split-fields');
+const amountInput = document.getElementById('amount');
+const saleAmountInput = document.getElementById('sale-amount');
+const tipAmountInput = document.getElementById('tip-amount');
+
+splitCheck.addEventListener('change', () => {
+    splitFields.style.display = splitCheck.checked ? 'block' : 'none';
+    if (splitCheck.checked) {
+        document.getElementById('amount').required = false;
+    } else {
+        document.getElementById('amount').required = true;
+    }
+});
+
 // 表单提交
 document.getElementById('transaction-form').addEventListener('submit', (e) => {
     e.preventDefault();
     
     const editId = document.getElementById('edit-id').value;
-    const transaction = {
-        id: editId ? parseInt(editId) : Date.now(),
-        date: document.getElementById('date').value,
-        description: document.getElementById('description').value,
-        type: document.getElementById('type').value,
-        category: document.getElementById('category').value,
-        amount: parseFloat(document.getElementById('amount').value),
-        note: document.getElementById('note').value,
-    };
+    const type = document.getElementById('type').value;
+    const date = document.getElementById('date').value;
+    const description = document.getElementById('description').value;
+    const note = document.getElementById('note').value;
     
     let transactions = getTransactions();
     
     if (editId) {
         // 编辑模式
         const index = transactions.findIndex(t => t.id === parseInt(editId));
-        if (index !== -1) transactions[index] = transaction;
+        if (index !== -1) {
+            transactions[index] = {
+                id: parseInt(editId),
+                date: date,
+                description: description,
+                type: type,
+                category: document.getElementById('category').value,
+                amount: parseFloat(document.getElementById('amount').value),
+                note: note,
+            };
+        }
+    } else if (type === 'income' && splitCheck.checked) {
+        // 新增模式 - 拆分收入
+        const totalAmount = parseFloat(document.getElementById('amount').value) || 0;
+        const saleAmount = parseFloat(saleAmountInput.value) || 0;
+        const tipAmount = parseFloat(tipAmountInput.value) || 0;
+        
+        if (saleAmount > 0) {
+            transactions.push({
+                id: Date.now(),
+                date: date,
+                description: description + ' - 销售收入',
+                type: 'income',
+                category: 'income',
+                amount: saleAmount,
+                note: note,
+            });
+        }
+        if (tipAmount > 0) {
+            transactions.push({
+                id: Date.now() + 1,
+                date: date,
+                description: description + ' - 小费',
+                type: 'income',
+                category: 'tip',
+                amount: tipAmount,
+                note: note,
+            });
+        }
     } else {
-        // 新增模式
+        // 新增模式 - 普通交易
+        const transaction = {
+            id: Date.now(),
+            date: date,
+            description: description,
+            type: type,
+            category: document.getElementById('category').value,
+            amount: parseFloat(document.getElementById('amount').value),
+            note: note,
+        };
         transactions.push(transaction);
     }
     
@@ -1514,6 +1607,8 @@ document.getElementById('transaction-form').addEventListener('submit', (e) => {
     document.getElementById('edit-id').value = '';
     document.getElementById('form-title').textContent = '添加交易';
     document.getElementById('date').value = new Date().toISOString().split('T')[0];
+    splitFields.style.display = 'none';
+    document.getElementById('amount').required = true;
     
     alert('保存成功！');
     updateDashboard();
@@ -1525,12 +1620,23 @@ function renderTransactions() {
     const tbody = document.getElementById('transaction-list');
     tbody.innerHTML = '';
     
+    const catLabels = {
+        'income': '销售收入',
+        'tip': '小费',
+        'salary': '工资',
+        'utilities': '水电',
+        'gst': 'GST',
+        'other': '其他',
+        'rent': '租金',
+        'supplies': '耗材'
+    };
+    
     transactions.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(t => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${t.date}</td>
             <td>${t.description}</td>
-            <td>${t.category}</td>
+            <td>${catLabels[t.category] || t.category}</td>
             <td class="${t.type}">${t.type === 'income' ? '收入' : '支出'}</td>
             <td class="${t.type}">$${t.amount.toFixed(2)}</td>
             <td>
@@ -1582,9 +1688,11 @@ function updateDashboard() {
     
     const monthTxns = transactions.filter(t => t.date.startsWith(month));
     const income = monthTxns.filter(t => t.type === 'income').reduce((sum, t) => sum + t.amount, 0);
+    const tip = monthTxns.filter(t => t.category === 'tip').reduce((sum, t) => sum + t.amount, 0);
     const expense = monthTxns.filter(t => t.type === 'expense').reduce((sum, t) => sum + t.amount, 0);
     
     document.getElementById('month-income').textContent = `$${income.toFixed(2)}`;
+    document.getElementById('month-tip').textContent = `$${tip.toFixed(2)}`;
     document.getElementById('month-expense').textContent = `$${expense.toFixed(2)}`;
     document.getElementById('month-balance').textContent = `$${(income - expense).toFixed(2)}`;
     document.getElementById('month-count').textContent = monthTxns.length;
@@ -1621,6 +1729,17 @@ document.getElementById('generate-report').addEventListener('click', () => {
     });
     reportData.innerHTML += '</tbody></table>';
     
+    // 小费汇总
+    const tipTransactions = filtered.filter(t => t.category === 'tip');
+    const tipTotal = tipTransactions.reduce((s, t) => s + t.amount, 0);
+    
+    if (tipTransactions.length > 0) {
+        reportData.innerHTML += '<h2 style="margin-top:30px;">💰 小费汇总</h2>';
+        reportData.innerHTML += '<table class="transaction-table"><thead><tr><th>类型</th><th>笔数</th><th>金额</th></tr></thead><tbody>';
+        reportData.innerHTML += '<tr><td>小费收入</td><td>' + tipTransactions.length + '</td><td class="income">$' + tipTotal.toFixed(2) + '</td></tr>';
+        reportData.innerHTML += '</tbody></table>';
+    }
+    
     // GST汇总
     const gstTransactions = filtered.filter(t => t.category === 'gst');
     const gstIncome = gstTransactions.filter(t => t.type === 'income').reduce((s, t) => s + t.amount, 0);
@@ -1643,13 +1762,18 @@ document.getElementById('generate-report').addEventListener('click', () => {
     const categories = Object.keys(categoryTotals);
     const incomes = categories.map(c => categoryTotals[c].income);
     const expenses = categories.map(c => categoryTotals[c].expense);
+    const colors = categories.map(c => {
+        if (c === 'tip') return '#f39c12';
+        if (c === 'income') return '#27ae60';
+        return '#3498db';
+    });
     
     window.reportChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: categories,
             datasets: [
-                { label: '收入', data: incomes, backgroundColor: '#27ae60' },
+                { label: '收入', data: incomes, backgroundColor: colors },
                 { label: '支出', data: expenses, backgroundColor: '#e74c3c' },
             ]
         },
