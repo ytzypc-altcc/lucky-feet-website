@@ -1,6 +1,8 @@
 #EXTM3U
-# 凤凰卫视（ExoPlayer 可播，2026-10-25 验证）
+# 凤凰卫视（ExoPlayer 可播，2026-10-25 验证；源可能变动，挂了找 Hermes 重挖）
 #EXTINF:-1 tvg-group="港澳台",凤凰中文
 https://cdn6.cc.cd/163189/fhzw
 #EXTINF:-1 tvg-group="港澳台",凤凰资讯
 https://cdn6.cc.cd/163189/fhzx
+#EXTINF:-1 tvg-group="港澳台",凤凰香港
+https://cdn6.cc.cd/163189/fhhk
